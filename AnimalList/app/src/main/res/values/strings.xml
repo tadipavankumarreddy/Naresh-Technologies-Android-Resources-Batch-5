@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Animal List</string>
+    <string-array name="animals">
+        <item>Dog</item>
+        <item>Elephant</item>
+        <item>Tiger</item>
+        <item>Deer</item>
+        <item>Panda</item>
+        <item>Monkey</item>
+        <item>Lion</item>
+        <item>Hippopotamus</item>
+        <item>Cat</item>
+        <item>Cow</item>
+        <item>Buffalo</item>
+        <item>Ox</item>
+        <item>Girrafee</item>
+        <item>Camel</item>
+        <item>Horse</item>
+    </string-array>
+</resources>
