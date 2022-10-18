@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
@@ -53,7 +56,18 @@ public class FetchFruitsData extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        ref_result.setText(s);
         progressBar.setVisibility(View.INVISIBLE);
+        try {
+            JSONArray array = new JSONArray(s);
+            for(int i=0; i<array.length();i++){
+                JSONObject item = array.getJSONObject(i);
+                String fruit_name = item.getString("name");
+                JSONObject nutritions = item.getJSONObject("nutritions");
+                String corbohyd = nutritions.getString("carbohydrates");
+                ref_result.append(fruit_name+"\n"+corbohyd+"\n\n");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
