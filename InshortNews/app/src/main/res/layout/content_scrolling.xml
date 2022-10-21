@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ScrollingActivity"
+    tools:showIn="@layout/activity_scrolling">
+
+   <LinearLayout
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <TextView
+           android:id="@+id/title_scorll"
+           android:textSize="15sp"
+           android:textStyle="bold"
+           android:textColor="#000"
+           android:text="News Title"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+
+       <TextView
+           android:id="@+id/news_author_scroll"
+           android:textSize="12sp"
+           android:text="Author"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+
+       <TextView
+           android:id="@+id/news_content_scroll"
+           android:textSize="14sp"
+           android:textColor="#000"
+           android:text="CONTENT\n\tGoes Here"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+
+       <Button
+           android:text="Open Original"
+           android:layout_gravity="bottom"
+           android:onClick="openNewsArticle"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+
+   </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

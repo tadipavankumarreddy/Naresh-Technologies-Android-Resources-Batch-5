@@ -1,6 +1,7 @@
 package in.nareshtechnologies.inshortnews;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +44,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         return news_articles.size();
     }
 
-    public class NewsViewHolder extends RecyclerView.ViewHolder {
+    public class NewsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView news_image;
         TextView news_title;
 
@@ -51,6 +52,16 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             super(itemView);
             news_image = itemView.findViewById(R.id.news_image);
             news_title = itemView.findViewById(R.id.news_title);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition(); //Will return the position of the item that is clicked
+            Datum datum = news_articles.get(position);
+            Intent intent = new Intent(context,ScrollingActivity.class);
+            intent.putExtra("KEY",datum);
+            context.startActivity(intent);
         }
     }
 }
