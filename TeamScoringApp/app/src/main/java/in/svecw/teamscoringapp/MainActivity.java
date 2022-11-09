@@ -2,6 +2,7 @@ package in.svecw.teamscoringapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -20,18 +21,19 @@ public class MainActivity extends AppCompatActivity {
         /*setContentView(R.layout.activity_main);*/
         mainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
-        if(mainViewModel!=null){
-            mainBinding.textView.setText(String.valueOf(mainViewModel.count));
-        }
+        mainViewModel.count.observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                mainBinding.textView.setText(String.valueOf(mainViewModel.count.getValue()));
+            }
+        });
     }
 
     public void incrementScore(View view) {
         mainViewModel.increment();
-        mainBinding.textView.setText(String.valueOf(mainViewModel.count));
     }
 
     public void decrementScore(View view) {
         mainViewModel.decrement();
-        mainBinding.textView.setText(String.valueOf(mainViewModel.count));
     }
 }

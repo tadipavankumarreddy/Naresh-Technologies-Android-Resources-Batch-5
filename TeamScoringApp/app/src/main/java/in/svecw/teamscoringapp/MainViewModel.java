@@ -2,15 +2,17 @@ package in.svecw.teamscoringapp;
 
 import android.util.Log;
 
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class MainViewModel extends ViewModel {
 
-    int count;
+    MutableLiveData<Integer> count;
 
     public MainViewModel() {
         Log.e("MAIN","View Model is created");
-        count = 0;
+        count = new MutableLiveData<>();
+        count.setValue(0);
     }
 
     // This method is executed when your activity is taken out of memory
@@ -22,10 +24,10 @@ public class MainViewModel extends ViewModel {
     }
 
     public void increment(){
-        count++;
+        count.setValue(count.getValue() + 1);
     }
 
     public void decrement(){
-        count--;
+        count.setValue(count.getValue() - 1);
     }
 }
