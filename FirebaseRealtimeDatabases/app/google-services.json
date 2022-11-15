@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "552274220705",
+    "project_id": "fir-realtime-databases-59c29",
+    "storage_bucket": "fir-realtime-databases-59c29.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552274220705:android:cbe8509e25c65fd67202e0",
+        "android_client_info": {
+          "package_name": "in.nareshtechnologies.firebaserealtimedatabases"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "552274220705-otlkmg1m2q004bkdvsk0s2n404550v6l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNDifwr7qNCsMkw0KicIJaK0RDP_mvgrk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "552274220705-otlkmg1m2q004bkdvsk0s2n404550v6l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
